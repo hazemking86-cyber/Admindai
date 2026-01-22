@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdMind.AI - Create Short Videos & Ads with AI</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; line-height: 1.6; }
+        header { background: linear-gradient(135deg, #4267B2, #365899); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; }
+        header p { font-size: 1.2em; margin: 10px 0; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #4267B2; border-bottom: 2px solid #4267B2; padding-bottom: 10px; }
+        .cta-button { display: inline-block; padding: 12px 25px; background-color: #4267B2; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.3s; }
+        .cta-button:hover { background-color: #365899; }
+        .demo { background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 20px; }
+        .demo input, .demo button { padding: 10px; margin: 5px; border: 1px solid #ccc; border-radius: 4px; }
+        .demo button { background-color: #4267B2; color: white; cursor: pointer; }
+        .demo button:hover { background-color: #365899; }
+        .testimonials { display: flex; flex-wrap: wrap; gap: 20px; }
+        .testimonial { flex: 1 1 300px; background: #f4f4f4; padding: 20px; border-radius: 8px; }
+        form { display: flex; flex-direction: column; }
+        form input, form textarea { padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        form button { padding: 12px; background-color: #4267B2; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        form button:hover { background-color: #365899; }
+        footer { text-align: center; padding: 20px; background-color: #4267B2; color: white; }
+        footer a { color: white; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AdMind.AI</h1>
+        <p>Generate Short Videos & Ads for Anything with AI – Fast, Easy, and Creative</p>
+        <a href="#demo" class="cta-button">Try It Now</a>
+    </header>
+    
+    <div class="container">
+        <section class="section" id="about">
+            <h2>About AdMind.AI</h2>
+            <p>Welcome to AdMind.AI, a revolutionary new platform powered by artificial intelligence. We specialize in creating high-quality short videos and advertisements for any topic, product, or idea. Whether you're promoting a business, sharing a story, or experimenting with creativity, our AI tools handle scripting, visuals, and editing – all in minutes. No design skills required!</p>
+            <p>Our AI analyzes your inputs to produce engaging, customized content tailored for social media, websites, or marketing campaigns. Join our growing community on <a href="https://www.facebook.com/AdMind.AI.HA/" target="_blank">Facebook</a> for tips and updates.</p>
+        </section>
+        
+        <section class="section" id="services">
+            <h2>Our AI-Powered Services</h2>
+            <ul>
+                <li><strong>Short Video Generation:</strong> Input a topic or script, and our AI creates a 15-60 second video with animations, voiceovers, and effects.</li>
+                <li><strong>Ad Creation:</strong> Build targeted ads with AI-driven optimization for platforms like Facebook, Instagram, or YouTube.</li>
+                <li><strong>Customization:</strong> Choose styles (e.g., animated, realistic, humorous) and add your branding.</li>
+                <li><strong>Analytics & Insights:</strong> Get performance data to refine your content.</li>
+                <li><strong>API Access:</strong> Integrate with your tools for automated workflows.</li>
+            </ul>
+        </section>
+        
+        <section class="section" id="demo">
+            <h2>Try Our AI Demo</h2>
+            <p>Enter a topic below to generate a sample short video script and description (simulated AI output). For real videos, sign up for full access!</p>
+            <div class="demo">
+                <input type="text" id="topicInput" placeholder="e.g., 'Promote eco-friendly products'">
+                <button onclick="generateContent()">Generate Video Idea</button>
+                <div id="output" style="margin-top: 20px; padding: 10px; background: white; border-radius: 4px; min-height: 100px;"></div>
+            </div>
+        </section>
+        
+        <section class="section" id="testimonials">
+            <h2>What Users Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"AdMind.AI turned my product idea into a viral ad in seconds! The AI nailed the visuals."</p>
+                    <cite>- Sarah K., Entrepreneur</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Perfect for quick social media videos. Saved me hours of editing."</p>
+                    <cite>- Mike T., Marketer</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Incredible creativity – the AI even suggested better hooks for my ads."</p>
+                    <cite>- Lisa R., Content Creator</cite>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or need custom AI solutions? Reach out!</p>
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 AdMind.AI. All rights reserved. | Follow us on <a href="https://www.facebook.com/AdMind.AI.HA/" target="_blank">Facebook</a></p>
+    </footer>
+    
+    <script>
+        function generateContent() {
+            const topic = document.getElementById('topicInput').value;
+            const output = document.getElementById('output');
+            if (!topic) {
+                output.innerHTML = '<p style="color: red;">Please enter a topic!</p>';
+                return;
+            }
+            output.innerHTML = `
+                <h3>Generated Video Idea for: "${topic}"</h3>
+                <p><strong>Script:</strong> "Discover the future of sustainability with our eco-friendly products. From reusable bags to solar chargers, make a difference today!"</p>
+                <p><strong>Visuals:</strong> Animated scenes of nature, product close-ups, and a call-to-action overlay.</p>
+                <p><strong>Duration:</strong> 30 seconds. <em>(Sign up for full AI rendering!)</em></p>
+            `;
+        }
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent (simulated).');
+        });
+    </script>
+</body>
+</html>
